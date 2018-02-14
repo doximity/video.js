@@ -4,7 +4,6 @@
 import Button from '../button';
 import Component from '../component';
 import * as Dom from '../utils/dom.js';
-import checkVolumeSupport from './volume-control/check-volume-support';
 
 /**
  * A button component for muting the audio.
@@ -24,9 +23,6 @@ class MuteToggle extends Button {
    */
   constructor(player, options) {
     super(player, options);
-
-    // hide this control if volume support is missing
-    checkVolumeSupport(this, player);
 
     this.on(player, ['loadstart', 'volumechange'], this.update);
   }
