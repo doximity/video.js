@@ -1237,7 +1237,7 @@ Html5.resetMediaElement = function(el) {
   'playsinline'
 ].forEach(function(prop) {
   Html5.prototype[prop] = function() {
-    return this.el_[prop] || this.el_.hasAttribute(prop);
+    return this.el_[prop];
   };
 });
 
